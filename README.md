@@ -19,11 +19,6 @@ This guide explains how to create and install the Python environment for this pr
 * **Poetry** installed:
 
   * Linux: `curl -sSL https://install.python-poetry.org | python3 -`
-  * Windows (PowerShell):
-
-    ```powershell
-    (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
-    ```
 * **Add Poetry to your PATH** as instructed by the installer.
 
 ---
@@ -43,12 +38,6 @@ This guide explains how to create and install the Python environment for this pr
 
    ```bash
    poetry install
-   ```
-
-3. **Activate the virtual environment**:
-
-   ```bash
-   poetry shell
    ```
 
 <!-- ### Windows (PowerShell)
@@ -79,7 +68,7 @@ This guide explains how to create and install the Python environment for this pr
 Once the environment is active, you can run your scripts as usual:
 
 ```bash
-python train_UDA.py
+poetry run python train_UDA.py 
 ```
 
 ---

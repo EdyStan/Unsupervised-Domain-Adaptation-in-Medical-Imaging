@@ -8,6 +8,9 @@ def preprocess_data(data_dir, dataset_names):
     for dataset_name in dataset_names:
 
         dataset_dir = os.path.join(data_dir, dataset_name)
+        if os.path.exists(dataset_dir):
+            print(f"Dataset {dataset_name} already exists. Skipping download.")
+            continue
 
         add_train_and_test = True
         max_images = 4000

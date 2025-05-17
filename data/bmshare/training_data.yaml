@@ -1,0 +1,7 @@
+
+        train: ./data/bmshare/yolo_data/train
+        val: ./data/bmshare/yolo_data/val
+
+        nc: 1
+        names: ['object']
+        
