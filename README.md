@@ -1,90 +1,85 @@
-# Project Installation Guide
+## Project Setup with Poetry
 
-This README explains how to set up a Python virtual environment and install all required dependencies on **Windows** or **Linux**.
+This guide explains how to create and install the Python environment for this project using Poetry on **Linux** and **Windows**.
+
+### Core Dependencies
+
+* **Deep Learning Framework**: `torch`, `torchvision`
+* **Image Processing**: `opencv-python`, `Pillow`
+* **Data Science**: `numpy`, `pandas`, `matplotlib`
+* **Machine Learning**: `scikit-learn`, `scipy`
+* **Utilities**: `gdown`
 
 ---
 
-## 1. Prerequisites
+## Prerequisites
 
-* **Python** 3.7 or higher installed on your system.
-* **pip** (comes with recent Python installs).
-* (Optional) **git** if you need to clone the repository.
+* **Python** >= 3.8 installed and on your PATH.
+* **Git** (optional, for cloning repository).
+* **Poetry** installed:
+
+  * Linux: `curl -sSL https://install.python-poetry.org | python3 -`
+  * Windows (PowerShell):
+
+    ```powershell
+    (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
+    ```
+* **Add Poetry to your PATH** as instructed by the installer.
 
 ---
 
-## 2. Create a Virtual Environment
+## Installation
 
-### Linux / macOS
+### Linux
+
+1. **Clone the repository** (if applicable):
+
+   ```bash
+   git clone https://github.com/EdyStan/Unsupervised-Domain-Adaptation-in-Medical-Imaging.git
+   cd your_repo
+   ```
+
+2. **Install dependencies**:
+
+   ```bash
+   poetry install
+   ```
+
+3. **Activate the virtual environment**:
+
+   ```bash
+   poetry shell
+   ```
+
+<!-- ### Windows (PowerShell)
+
+1. **Clone the repository** (if applicable):
+
+   ```powershell
+   git clone https://github.com/EdyStan/Unsupervised-Domain-Adaptation-in-Medical-Imaging.git
+   cd your_repo
+   ```
+
+2. **Install dependencies**:
+
+   ```powershell
+   poetry install
+   ```
+
+3. **Activate the virtual environment**:
+
+   ```powershell
+   poetry shell
+   ``` -->
+
+---
+
+## Usage
+
+Once the environment is active, you can run your scripts as usual:
 
 ```bash
-# Navigate to project root
-git clone <repo-url>  # if needed
-cd <project-folder>
-
-# Create venv folder named 'venv'
-python3 -m venv venv
-
-# Activate the virtual environment
-source venv/bin/activate
+python train_UDA.py
 ```
-
-### Windows (PowerShell)
-
-```powershell
-# Navigate to project root
-git clone <repo-url>  # if needed
-cd <project-folder>
-
-# Create venv folder named 'venv'
-python -m venv venv
-
-# Activate the virtual environment
-override
-.
-venv\Scripts\Activate.ps1
-# Or for cmd.exe:
-venv\Scripts\activate.bat
-```
-
-After activation, your prompt should prefixed by `(venv)`.
 
 ---
-
-## 3. Install Dependencies
-
-```bash
-pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-This will install:
-
-* **PyTorch & Torchvision** for deep learning models
-* **OpenCV (cv2)** and **Pillow** for image I/O
-* **NumPy**, **Pandas**, **Matplotlib** for data handling & plotting
-* **Scikit-learn**, **SciPy** for metrics and numerical routines
-* **gdown** for downloading data from Google Drive
-
----
-
-## 4. Verify Installation
-
-In a Python shell or script, try:
-
-```python
-import torch
-import torchvision
-import cv2
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import gdown
-from sklearn.metrics import precision_score
-from scipy.spatial.distance import directed_hausdorff
-from PIL import Image
-```
-
-If no errors occur, you are ready to go!
-
----
-
