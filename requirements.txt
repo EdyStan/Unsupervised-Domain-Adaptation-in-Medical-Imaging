@@ -1,0 +1,19 @@
+# Core DL framework
+torch
+torchvision
+
+# Image processing
+opencv-python
+Pillow
+
+# Data science
+numpy
+pandas
+matplotlib
+
+# Machine learning
+scikit-learn
+scipy
+
+# Utilities
+gdown
