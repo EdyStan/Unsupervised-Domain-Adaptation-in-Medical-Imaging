@@ -1,7 +1,0 @@
-
-        train: ./data/brats/yolo_data/train
-        val: ./data/brats/yolo_data/val
-
-        nc: 1
-        names: ['object']
-        
